@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./javascript/checarInformacoes.js" defer></script>
+    <script src="./javascript/addDados.js" defer></script>
+
+    <title>Controle Financeiro</title>
+</head>
+
+<body>
+    <header>
+        <h1>Controle Financeiro</h1>
+    </header>
+    <div id="saldo">
+        <h3>SALDO:</h3><span id="textoSaldo"></span>
+    </div>
+
+    <div class="informaçoes">
+        <div class="selecaoFormulario">
+            <div class="inputRadio">
+
+                <input type="radio" id="adicinarDespesa" name="selecaoFormulario" onclick="checar()">
+                <label>Adicionar Despesa</label>
+                <br>
+                <input type="radio" id="adicinarReceita" name="selecaoFormulario" onclick="checar()">
+                <label>Adicionar Receita</label>
+            </div>
+
+            <form action="" id="formulario" style="display: none;">
+                <label for="observacao">OBSERVAÇÃO:
+                    <input type="text" id="observacao" name="observacao">
+                </label>
+
+                <label for="data">DATA:
+                    <br>
+                    <input type="date" id="data" name="data">
+                </label>
+
+                <div class="categoria">
+                    <label for="categoria">CATEGORIA:
+                        <select id="categoriaDespesa" name="categoriaDespesa" class="categoria">
+                            <option id="saude">SAUDE</option>
+                            <option id="transporte">TRANSPORTE</option>
+                            <option id="moradia">MORADIA</option>
+                            <option id="educacao">EDUCAÇÃO</option>
+                            <option id="financeiro">FINANCEIRO</option>
+                        </select>
+
+                        <select id="categoriaReceita" name="categoriaReceita" class="categoria">
+                            <option value="Salario">SALARIO</option>
+                            <option value="Ferias">FERIAS</option>
+                            <option value="13°Salario">13° SALARIO</option>
+                            <OPtion value="Investimento">INVESTIMENTO</OPtion>
+                        </select>
+                    </label>
+                </div>
+
+                <label for=""> VALOR:
+                    <input type="text" name="valor" id="valor">
+                </label>
+
+                <button type="submit" id="btn-enviarDados">ENVIAR</button>
+            </form>
+        </div>
+
+        <table class="informacoesCadastradas" style="display: block;">
+            <thead>
+                <tr>
+                    <th>OBSERVAÇÃO</th>
+                    <th>DATA</th>
+                    <th>CATEGORIA</th>
+                    <th>VALOR</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-dados">
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
